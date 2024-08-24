@@ -12,7 +12,6 @@ import EstudiosTalleres from './flows/EstudiosTalleres'
 const PORT = process.env.PORT ?? 3008
 
 
-
  const welcomeFlow = addKeyword<Provider, Database>(['hi', 'hello', 'hola'])
     .addAnswer(`🎓 ¡Hola! Bienvenid@ a tu guía virtual en el Cecyteq 6 Corregidora.`)
     .addAnswer(
@@ -27,7 +26,7 @@ const PORT = process.env.PORT ?? 3008
         ].join('\n'),
         { capture: true },
         async (ctx, { fallBack , endFlow}) => {
-            const validOptions = ["1","2","3","4"];
+            const validOptions = ["1","2","3","4","5"];
             if (!validOptions.includes(ctx.body)) {
                 return fallBack(` ${ctx.name} seleccione una opción válida del menú ✅💬`);
             }
